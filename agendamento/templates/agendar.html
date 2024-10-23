@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Agendar - Sistema de Agendamento{% endblock %}
+
+{% block content %}
+<h2>Agendar Espaço</h2>
+<form method="post">
+    {% csrf_token %}
+    {% crispy form %}
+</form>
+{% endblock %}

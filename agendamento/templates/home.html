@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Home - Sistema de Agendamento{% endblock %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Bem vindo ao Sistema de Agendamento!</h1>
+    <p class="lead">{{user.username}}</p>
+    <p class="lead">Agende seus espaços de forma rápida e fácil.</p>
+    <hr class="my-4">
+    {% if user.is_authenticated %}
+    <a class="btn btn-primary btn-lg" href="{% url 'agendar' %}" role="button">Agendar Agora</a>
+    {% else %}
+    <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Entrar</a>
+    {% endif %}
+</div>
+{% endblock %}
